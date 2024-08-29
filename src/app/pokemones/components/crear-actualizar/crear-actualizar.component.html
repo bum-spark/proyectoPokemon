@@ -1,0 +1,120 @@
+<div class="card">
+  <div class="card-body flex flex-wrap gap-3 p-fluid">
+    <form [formGroup]="CrearActualizarFormulario" (ngSubmit)="Guardar()" novalidate>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2">
+        <div class="mb-3 col">
+          <label class="form-label">Nombre <span class="text-danger">*</span></label>
+          <input type="text" pInputText formControlName="nombre" class="p-inputtext p-component" style="min-width: 100%;">
+          <div *ngIf="isValid('nombre')" class="text-danger">
+            El nombre es requerido.
+          </div>
+        </div>
+        <div class="mb-3 col">
+          <label class="form-label">Tipo <span class="text-danger">*</span></label>
+          <p-dropdown
+  formControlName="tipo"
+  [options]="pokemonTypes"
+  optionLabel="name"
+  optionValue="name"
+  placeholder="Selecciona un tipo" >
+  <ng-template let-pokemon pTemplate="item">
+    <div class="flex align-items-center gap-2">
+        <span class="badge " [ngStyle]="{'background-color': pokemon.tipo}"> {{ pokemon.name }}</span>
+    </div>
+</ng-template>
+
+
+</p-dropdown>
+          <div *ngIf="isValid('tipo')" class="text-danger">
+            El tipo es requerido.
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="mb-3">
+        <label class="form-label">Url Imagen <span class="text-danger">*</span></label>
+        <input type="text" pInputText formControlName="url" class="p-inputtext p-component" style="min-width: 100%;">
+        <div *ngIf="isValid('url')" class="text-danger">
+          La URL de la imagen es requerida.
+        </div>
+      </div>
+
+
+
+
+      <div class="row row-cols-1 row-cols-sm-4 row-cols-md-6">
+        <div class="mb-3 col">
+          <label class="form-label">Hp <span class="text-danger">*</span></label>
+          <p-inputNumber
+            formControlName="hp"
+            inputId="minmax"
+            mode="decimal"
+            [min]="0"
+            [max]="999"
+            class="p-inputwrapper p-inputwrapper-filled"
+           >
+          </p-inputNumber>
+          <div *ngIf="isValid('hp')" class="text-danger">
+            El valor de HP es requerido.
+          </div>
+        </div>
+        <div class="mb-3 col">
+          <label class="form-label">Defensa <span class="text-danger">*</span></label>
+          <p-inputNumber
+            formControlName="defensa"
+            inputId="minmax"
+            mode="decimal"
+            [min]="0"
+            [max]="100"
+            class="p-inputwrapper p-inputwrapper-filled"
+           >
+          </p-inputNumber>
+          <div *ngIf="isValid('defensa')" class="text-danger">
+            El valor de defensa es requerido.
+          </div>
+        </div>
+        <div class="mb-3 col">
+          <label class="form-label">Ataque <span class="text-danger">*</span></label>
+          <p-inputNumber
+            formControlName="ataque"
+            inputId="minmax"
+            mode="decimal"
+            [min]="0"
+            [max]="100"
+            class="p-inputwrapper p-inputwrapper-filled"
+            >
+          </p-inputNumber>
+          <div *ngIf="isValid('ataque')" class="text-danger">
+            El valor de ataque es requerido.
+          </div>
+        </div>
+        <div class="mb-3 col">
+          <label class="form-label">Rapidez <span class="text-danger">*</span></label>
+          <p-inputNumber
+            formControlName="rapidez"
+            inputId="minmax"
+            mode="decimal"
+            [min]="0"
+            [max]="100"
+            class="p-inputwrapper p-inputwrapper-filled"
+            >
+          </p-inputNumber>
+          <div *ngIf="isValid('rapidez')" class="text-danger">
+            El valor de rapidez es requerido.
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+  </div>
+</div>
+
+
+

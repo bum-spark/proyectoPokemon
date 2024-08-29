@@ -1,0 +1,65 @@
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+  
+    <div>
+      <span class="badge rounded-pill bg-secondary">Creado por: {{Datos.name || 'Cargando...'}}</span>
+    </div>
+    
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      
+      <button type="button" class="btn btn-danger" (click)="EliminarRegistro($event)" >Eliminar</button>
+
+      <!-- <p-button 
+    (click)="EliminarRegistro($event)" 
+    label="Eliminar" 
+    severity="danger"
+    class="btn-danger" 
+    id="kkkk" /> -->
+   
+      <button type="button" class="btn btn-primary" [routerLink]="['/actualizar/', id]">
+         Editar
+      </button>
+    </div>
+  
+  </div>
+</div>
+
+
+
+<div class="d-flex justify-content-center">
+  <div class="contenedor">
+      <div class="color" [ngStyle]="{ 'background-color': backgroundColor }" id="card-container">
+        <img [src]="Datos.url" id="Imagen" alt="">
+      </div>
+    
+      <div class="info">
+        <div class="nombres">
+          <div id="este">
+            <span >HP {{ Datos.hp }}</span>
+          </div>
+          <div id="Name">{{ Datos.nombre }}</div>
+          <div class="types">
+            <span id="tipo" [ngStyle]="{ 'background-color': backgroundColor }">
+              {{ Datos.tipo }}
+            </span>
+          </div>
+          <div id="cont" class="stats">
+            <div class="stat1">
+              <div id="letra" style="font-weight: 600;">{{ Datos.ataque }}</div>
+              <div style="font-size: 14px;">Attack</div>
+            </div>
+            <div class="stat2">
+              <div id="letra" style="font-weight: 600;">{{ Datos.defensa }}</div>
+              <div style="font-size: 14px;">Defense</div>
+            </div>
+            <div class="stat3">
+              <div id="letra" style="font-weight: 600;">{{ Datos.rapidez }}</div>
+              <div style="font-size: 14px;">Speed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
+

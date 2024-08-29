@@ -1,0 +1,167 @@
+
+
+<!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+    <div class="mx-auto p-2 ng-star-inserted" *ngFor="let item of Datos">
+        <p-card header="{{item.nombre}}"  [style]="{ width: '360px' }">
+            <ng-template pTemplate="header">
+                <img alt="Card" src="{{item.url}}" />
+            </ng-template>
+            <p>
+                Creado por: {{nombre}}
+            </p>
+            <ng-template pTemplate="footer">
+                <div class="flex gap-3 mt-1">
+                    <p-button label="Ver" class="w-full" styleClass="w-full" />
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+    
+</div> -->
+
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <button class="btn btn-success" type="submit" [routerLink]="['/crear']">Crear</button>
+      </form>
+    </div>
+  </div>
+</nav> -->
+
+<div class="card text-center">
+  <div class="card-header">
+      <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+        <button class="btn btn-success" type="submit" [routerLink]="['/crear']">Crear</button>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="container" *ngIf="aparecio">
+  <div class="row row row-cols-1 row-cols-md-2 row-cols-lg-3">
+    <div class="mx-auto p-2 ng-star-inserted" >
+      <div class="col card m-0.5 card col mx-auto p-2" style="width: 16rem;">
+          <p-skeleton class="p-3" width="13rem" height="10rem" borderRadius="16px" />
+          <div class="card-body">
+            <h5 class="card-title">
+              <p-skeleton width="10rem" height="4rem" styleClass="mb-2" />
+            </h5>
+            <p class="card-text"><p-skeleton width="10rem" height="1rem" /></p>
+            <div class="d-grid gap-1">
+              <button type="button" class="btn btn-primary" >...</button>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">
+              <p><p-skeleton height="2rem" styleClass="mb-2" /></p>
+            </small>
+          </div>
+        </div>
+    </div>
+    <div class="mx-auto p-2 ng-star-inserted" >
+      <div class="col card m-0.5 card col mx-auto p-2" style="width: 16rem;">
+          <p-skeleton class="p-3" width="13rem" height="10rem" borderRadius="16px" />
+          <div class="card-body">
+            <h5 class="card-title">
+              <p-skeleton width="10rem" height="4rem" styleClass="mb-2" />
+            </h5>
+            <p class="card-text"><p-skeleton width="10rem" height="1rem" /></p>
+            <div class="d-grid gap-1">
+              <button type="button" class="btn btn-primary" >...</button>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">
+              <p><p-skeleton height="2rem" styleClass="mb-2" /></p>
+            </small>
+          </div>
+        </div>
+    </div>
+    <div class="mx-auto p-2 ng-star-inserted" >
+      <div class="col card m-0.5 card col mx-auto p-2" style="width: 16rem;">
+          <p-skeleton class="p-3" width="13rem" height="10rem" borderRadius="16px" />
+          <div class="card-body">
+            <h5 class="card-title">
+              <p-skeleton width="10rem" height="4rem" styleClass="mb-2" />
+            </h5>
+            <p class="card-text"><p-skeleton width="10rem" height="1rem" /></p>
+            <div class="d-grid gap-1">
+              <button type="button" class="btn btn-primary" >...</button>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">
+              <p><p-skeleton height="2rem" styleClass="mb-2" /></p>
+            </small>
+          </div>
+        </div>
+    </div>
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="container" *ngIf="!aparecio">
+  <div class="row row row-cols-1 row-cols-md-2 row-cols-lg-3">
+
+      <div class="mx-auto p-2 ng-star-inserted" *ngFor="let item of Datos" >
+        <div class="col card m-0.5 card col mx-auto p-2" style="width: 16rem;">
+            <img id="imagen" src="{{item.url}}" class="card-img-top p-3 " alt="..."  >
+            <div class="card-body">
+              <h5 class="card-title">{{item.nombre}}</h5>
+              <p class="card-text">Creado por: {{item.name || 'Cargando...'}}</p>
+              <div class="d-grid gap-1">
+                <button type="button" class="btn btn-primary" (click)="impirimir(item.id)" [routerLink]="['/ver/', item.id]">Ver</button>
+              </div>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary">
+                <p>Última actualización: {{ item.updated_at | moment:'FromDate' }}</p>
+              </small>
+            </div>
+          </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+<!-- 
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+  <div class="mx-auto p-2 ng-star-inserted">
+    <div class=" col mx-auto p-2" *ngFor="let item of Datos">
+      <div class="card h-75">
+        <img id="imagen" src="{{item.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{item.nombre}}</h5>
+          <p class="card-text">Creado por: {{item.nombreUsuario || 'Cargando...'}}</p>
+          <div class="d-grid gap-1">
+            <button type="button" class="btn btn-primary" (click)="impirimir(item.id)" [routerLink]="['/ver/', item.id]">Ver</button>
+          </div>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">
+            <p>Ultima actualizacion:  {{ item.created_at | moment:'FromDate':item.updated_at }}</p>
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+
+
+<p-paginator 
+(onPageChange)="onPageChange($event)" 
+[rows]="rows" 
+[totalRecords]="total" 
+[rowsPerPageOptions]="[3, 6, 9, 12]" />

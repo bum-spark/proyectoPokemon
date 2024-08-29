@@ -1,0 +1,231 @@
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vh;
+    padding-top: 50px !important;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vh;
+    background-color: transparent;
+    z-index: 0  ;
+    height: 500px;
+    bottom: -100px;
+    padding-top: 50px;
+}
+
+#card-container{
+    top: 165px;
+    width: 307px;
+}
+
+.color {
+    top: 150px;
+    width: 292px;
+    position: absolute;
+    background-color: black;
+    height: 180px;
+    border-bottom-left-radius: 150px 110px;
+    border-bottom-right-radius: 150px 110px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 50px;
+}
+
+.info {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 306px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 1px #929292;
+}
+
+#circulo {
+    width: 600px;
+    height: 1000px;
+    stroke: #2d3436;
+    z-index: 9;
+    position: absolute;
+    overflow: hidden;
+    top: 20%;
+    top: -500px;
+}
+
+.nombres {
+    z-index: 10;
+    position: relative;
+    width: 200px;
+    height: 90%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#este {
+    display: flex;
+    justify-content:center;
+    width: 80px;
+    background-color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 30px;
+    margin-left: auto;
+    font-weight: 400;
+    position:absolute;
+    top: -10px;
+    right: -24px;
+}
+
+#hp {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+    border-radius: 20px;
+    
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    height: 25vh;
+}
+
+#cont{
+    position: absolute;
+    bottom: 0px;
+    right: -55px;
+}
+
+
+#Name {
+    display: flex;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 25px;
+    position: absolute;
+    top: 233px;
+    right: -40px;
+    width: 141%;
+}
+
+
+#letra{
+    font-size: calc(1.3rem + .6vw);
+}
+
+
+#tipo{ 
+    border-radius: 999999px;
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    top: 285px;
+    right: 66px;
+}
+
+.types {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.types span {
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#Type #tipo {
+    margin: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 10px;
+    border-radius: 100px;
+    color: white;
+    font-weight: 500;
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.stat1, .stat2, .stat3 {
+    text-align: center;
+}
+
+.stat1 {
+    margin-left: -20px;
+    margin-right: 45px;
+}
+
+.stat2 {
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+.stat3 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.botones {
+    background-color: transparent;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.botones button {
+    transition-duration: 300ms;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-color: transparent;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botones button:hover {
+    transition-duration: 300ms;
+    transform: scale(1.1);
+}
+
+#Imagen{
+    position: absolute;
+    right: 57px;
+    top: 62px;
+    width: 26vh;
+}
+
+.p-ripple{
+    border-radius: 9999px !important;
+}
+
+#kkkk{
+    border-radius: 9999px  !important;
+}
