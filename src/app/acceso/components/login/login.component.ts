@@ -1,23 +1,25 @@
-import { Component, AfterViewInit, Renderer2, ElementRef, ViewChild } from "@angular/core";
+import { Component, AfterViewInit, Inject, PLATFORM_ID } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { HttpLaravelService } from "../../services/http.service";
 import { Router } from "@angular/router";
 import { LocalstorageService } from "../../../localstorage.service";
 import Swal from "sweetalert2";
+import { isPlatformBrowser } from "@angular/common";
+import { MessageService } from 'primeng/api';
 
 @Component({
     selector: 'app-pokemones-login',
-    templateUrl: './login.component.html'
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.scss'
 })
 export class LoginComponent implements AfterViewInit {
-    @ViewChild('este') cardElement!: ElementRef;
-
     constructor(
         public fb: FormBuilder, 
         public service: HttpLaravelService, 
         private router: Router,
         private localStorage: LocalstorageService,
-        private renderer: Renderer2
+        @Inject(PLATFORM_ID) private platformId: any,
+        private messageService: MessageService
     ) {
         this.localStorage.clean();
     }
@@ -41,19 +43,20 @@ export class LoginComponent implements AfterViewInit {
                 this.localStorage.setItem('accessToken', data.access_token);
                 this.router.navigate(['/']);
             } else {
-                Swal.fire({
+                this.messageService.add({ severity: 'error', summary: 'Error', detail: data.mensaje });
+                /* Swal.fire({
                     position: "center",
                     icon: "error",
                     title: data.mensaje,
                     showConfirmButton: false,
                     timer: 1500
-                });
+                }); */
             }
         }, error => {
             console.log(error);
         })
 
-        this.formulario.reset({ email: '', password: '' });
+        //this.formulario.reset({ email: '', password: '' });
     }
 
     isValid(field: string): null | boolean {
@@ -65,8 +68,11 @@ export class LoginComponent implements AfterViewInit {
     }
 
     ngAfterViewInit() {
-        if (this.cardElement) {
-            this.renderer.addClass(this.cardElement.nativeElement, 'show');
+        if (isPlatformBrowser(this.platformId)) {
+            const cardElement = document.getElementById('este');
+            setTimeout(() => {
+                cardElement?.classList.add('show');
+            }, 100);
         }
     }
 }

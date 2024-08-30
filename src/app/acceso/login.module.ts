@@ -19,6 +19,7 @@ import { RippleModule } from 'primeng/ripple';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { PaginatorModule } from "primeng/paginator";
 import { DialogModule } from 'primeng/dialog';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
 declarations: [PrincipalLoginComponent, LoginComponent, MenuComponent],

@@ -15,6 +15,8 @@ export class VistaComponent {
   id: number = 0;
   backgroundColor: string = '';
   nombre:string="";
+  imageUrl: string = 'assets/poke.gif';
+  imageLoaded: boolean = false;
   
   colorMap: Record<string, string> = {
     Agua: "#0190FF",
@@ -45,19 +47,21 @@ obtenerData(){
       this.Datos = response.data;
       const pokemonTypeName = this.capitalizeFirstLetter(this.Datos.tipo);
       this.backgroundColor = this.colorMap[pokemonTypeName] || '#95afc0';
+      this.imageUrl = this.Datos.url;
     } else {
       this.messageService.add({ severity: 'success', summary: 'Exito', detail: response.mensaje });
-      /* Swal.fire({
-        position: "top-end",
-        icon: "error",
-        title: response.mensaje,
-        showConfirmButton: false,
-        timer: 1500
-      }); */
       this.router.navigate(['/vista/']);
     }
     console.log(response);
   });
+}
+
+onImageLoad() {
+  this.imageLoaded = true;
+}
+
+onImageError() {
+  this.imageUrl = 'src/assets/poke.gif';  // Si hay un error al cargar, muestra la imagen de carga
 }
 
 EliminarRegistro(event: Event) {

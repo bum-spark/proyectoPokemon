@@ -8,13 +8,6 @@
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       
       <button type="button" class="btn btn-danger" (click)="EliminarRegistro($event)" >Eliminar</button>
-
-      <!-- <p-button 
-    (click)="EliminarRegistro($event)" 
-    label="Eliminar" 
-    severity="danger"
-    class="btn-danger" 
-    id="kkkk" /> -->
    
       <button type="button" class="btn btn-primary" [routerLink]="['/actualizar/', id]">
          Editar
@@ -29,7 +22,15 @@
 <div class="d-flex justify-content-center">
   <div class="contenedor">
       <div class="color" [ngStyle]="{ 'background-color': backgroundColor }" id="card-container">
-        <img [src]="Datos.url" id="Imagen" alt="">
+        <img 
+        [src]="imageUrl" 
+        [class.loaded]="imageLoaded"
+        [attr.data-original]="Datos.url" 
+        (load)="onImageLoad()" 
+        (error)="onImageError()"
+        alt="Pokémon"
+        id="estaimg"
+      >
       </div>
     
       <div class="info">

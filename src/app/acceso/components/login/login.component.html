@@ -77,12 +77,13 @@
 </div> -->
 
 
-
 <div class="d-flex justify-content-center align-items-center vh-100">
-    <div  class="card" style="max-width: 400px; padding: 20px; box-shadow: 0 50px 50px rgba(0, 0, 0, 0.3); border-radius: 10px; width:450px; height:400px;" id="este">
+    <div class="card login-card" id="este">
         <div class="text-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1333.34 1333.07" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" style="width: 100px; margin-bottom: 20px;">
-                <defs><style>.fil0{fill:#fff;fill-rule:nonzero}</style></defs>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1333.34 1333.07" class="login-logo">
+                <defs>
+                    <style>.fil0{fill:#fff;fill-rule:nonzero}</style>
+                </defs>
                 <g id="Layer_x0020_1">
                     <g id="_1473324886368">
                         <path id="Down" class="fil0" d="M666.54 885.24c-105.31 0-193.15-74.56-214.01-173.61H102.19c24.77 288.04 266.41 514.04 560.7 514.04 294.3 0 536.2-226 560.7-514.04H880.55c-20.85 99.32-108.7 173.61-214.01 173.61z"/>
@@ -105,7 +106,6 @@
                 </span>
             </div>
 
-
             <div class="form-group mb-4">
                 <input type="password" formControlName="password" class="form-control" placeholder="Contraseña"
                     [ngClass]="{'is-invalid': isValid('password') && (f['password'].touched || f['password'].dirty)}">
@@ -114,15 +114,11 @@
                 </span>
             </div>
 
-
             <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-block" style="background-color: #38bdf8; border-color: #38bdf8; box-shadow: 0px 4px 8px rgba(56, 189, 248, 0.5);">
+                <button type="submit" id="boton" class="btn btn-primary">
                     INICIAR SESIÓN
                 </button>
             </div>
         </form>
     </div>
 </div>
-
-
-

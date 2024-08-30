@@ -65,18 +65,18 @@ export class CrearActualizarComponent implements OnInit {
   get f() { return this.CrearActualizarFormulario.controls; }
 
   Guardar() {
-    console.log('Formulario es válido:', this.CrearActualizarFormulario.valid);  // Log para verificar si el formulario es válido
-    console.log('Datos del formulario:', this.CrearActualizarFormulario.value);  // Log para ver los datos que se enviarán
+    console.log('Formulario es válido:', this.CrearActualizarFormulario.valid);  
+    console.log('Datos del formulario:', this.CrearActualizarFormulario.value); 
 
     if (this.CrearActualizarFormulario.invalid) {
       this.CrearActualizarFormulario.markAllAsTouched();
-      console.log('Formulario es inválido, se marcaron todos los campos como tocados');  // Log cuando el formulario es inválido
+      console.log('Formulario es inválido, se marcaron todos los campos como tocados');
       return;
     }
 
     if (this.ID === undefined) {
       this.servicio.Service_Post('pokemon', '', this.CrearActualizarFormulario.value).subscribe((res: any) => {
-        console.log('Respuesta de creación:', res);  // Log para ver la respuesta de la creación
+        console.log('Respuesta de creación:', res);  
         if (res.estatus) {
           this.messageService.add({ severity: 'success', summary: 'Exito', detail: 'Pokémon Creado!' });
           this.CrearActualizarFormulario.reset();
@@ -87,7 +87,7 @@ export class CrearActualizarComponent implements OnInit {
       });
     } else {
       this.servicio.Service_Patch('pokemon', this.ID, this.CrearActualizarFormulario.value).subscribe((res: any) => {
-        console.log('Respuesta de modificación:', res);  // Log para ver la respuesta de la modificación
+        console.log('Respuesta de modificación:', res);  
         if (res.estatus) {
           this.messageService.add({ severity: 'success', summary: 'Exito', detail: 'Pokémon Modificado!' });
           this.CrearActualizarFormulario.reset();

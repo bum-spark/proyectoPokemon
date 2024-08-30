@@ -99,12 +99,14 @@ body {
     
 }
 
-img {
+#estaimg {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 20px;
     height: 25vh;
+    position: absolute;
+    right: 52px;
 }
 
 #cont{
