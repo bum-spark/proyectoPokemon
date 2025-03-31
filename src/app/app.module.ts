@@ -9,6 +9,7 @@ import { PokemonesModule } from './pokemones/pokemones.module';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { errorInterceptor } from './error.interceptor';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { PrincipalModule } from './principal/principal.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     AppRoutingModule,
     BrowserAnimationsModule,
     LoginModule,
-    PokemonesModule
+    PokemonesModule,
+    PrincipalModule
   ],
   providers: [
     provideClientHydration(),

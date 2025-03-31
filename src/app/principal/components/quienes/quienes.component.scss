@@ -1,0 +1,33 @@
+.titulo{
+  margin-top: 10px;
+}
+
+.contendor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilos específicos para el Bootstrap Carousel */
+  #carouselExampleControls {
+    .carousel-inner {
+      .carousel-item {
+        width: 100%;
+        aspect-ratio: 1400 / 480; // Mantiene la proporción original
+        // Si deseas que el contenedor tenga este aspect ratio, pero luego limites la altura,
+        // podrías quitar o ajustar esta propiedad según convenga.
+        
+        img {
+          max-height: 100vh;         // Limita la altura de la imagen
+          width: 100%;
+          object-fit: contain;       // Muestra la imagen completa sin recortar
+          object-position: center;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  article{
+    display: flow-root;
+  }

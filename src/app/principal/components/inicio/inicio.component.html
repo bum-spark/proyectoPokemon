@@ -1,0 +1,60 @@
+
+<div class="contendor">
+    <div id="carouselExampleControls" class="carousel slide w-100" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+          <div class="carousel-item active carousel-custom">
+            <img src="../../../../assets/BIENVENIDO.png" class="d-block" alt="Imagen 1">
+          </div>
+          <div class="carousel-item carousel-custom">
+            <img src="../../../../assets/BIENVENIDO (1).png" class="d-block" alt="Imagen 2">
+          </div>
+          <div class="carousel-item carousel-custom">
+            <img src="../../../../assets/BIENVENIDO (2).png" class="d-block" alt="Imagen 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+      
+</div>
+        
+<div class="text">
+  <h1 class="text-center mt-4">Libros destacados</h1>
+  <p class="text-center">Explora nuestra selección de libros destacados y sumérgete en nuevas historias.</p>
+</div>
+
+  <div class="card" style="width: 1000px; margin-top: 20px; margin-bottom: 20px;">
+    <p-carousel 
+    [value]="books" 
+    [numVisible]="5" 
+    [numScroll]="5" 
+    [circular]="true" 
+    [responsiveOptions]="responsiveOptions" 
+    [showIndicators]="true"
+    class="w-100">
+    
+    <ng-template pTemplate="item" let-product>
+      <div class="product-card rounded m-2 p-4 ">
+        <div class="mb-4">
+          <div class="relative mx-auto">
+            <img [src]="product.libroFoto" [alt]="product.titulo" class="w-full rounded-border" />
+          </div>
+        </div>
+        <div class="flex justify-between items-center">
+          <div class="mb-4 font-medium">{{ product.titulo }}</div>
+        </div>
+      </div>
+    </ng-template>
+      </p-carousel>
+    </div>
+    
+<div class="destacado">
+  <img id="exlusivo" src="../../../../assets/EXCLUSIVO.png" alt="">
+</div>
+

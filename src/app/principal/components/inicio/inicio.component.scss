@@ -1,0 +1,112 @@
+
+
+.contendor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilos específicos para el Bootstrap Carousel */
+  #carouselExampleControls {
+    .carousel-inner {
+      .carousel-item {
+        width: 100%;
+        aspect-ratio: 1400 / 480; // Mantiene la proporción original
+        // Si deseas que el contenedor tenga este aspect ratio, pero luego limites la altura,
+        // podrías quitar o ajustar esta propiedad según convenga.
+        
+        img {
+          max-height: 100vh;         // Limita la altura de la imagen
+          width: 100%;
+          object-fit: contain;       // Muestra la imagen completa sin recortar
+          object-position: center;
+          margin: auto;
+        }
+      }
+    }
+  }
+  
+  /* Estilos específicos para el PrimeNG Carousel en la tarjeta */
+
+  .card {
+    //max-width: 800px; /* Limita el ancho de la tarjeta */
+    width: 100vh; /* Asegura que la tarjeta ocupe el 100% del contenedor padre */
+    margin: 0 auto;   /* Centra la tarjeta en la pantalla */
+  
+    /* Aplica estilos a las imágenes dentro del carrusel de PrimeNG */
+    p-carousel {
+      /* Puedes agregar una clase personalizada al p-carousel en el HTML (ej. class="book-carousel")
+         y luego usar .book-carousel img { ... } para mayor precisión.
+         Aquí usamos el selector descendiente para que afecte solo a las imágenes dentro de .card. */
+      img {
+        max-height: 300px;      // Ajusta según lo que te parezca agradable
+        width: 100%;
+        object-fit: contain;    // Muestra la imagen completa sin recorte
+        margin: auto;
+      }
+    }
+  }
+ 
+  :host ::ng-deep .p-carousel .p-carousel-item .product-card {
+    /* Asegura que cada tarjeta se expanda al mismo alto y
+       mantenga la distribución vertical del contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;          /* Se estira para ocupar todo el espacio */
+    box-sizing: border-box;
+  }
+
+  .destacado{
+    display: flex;         // Flexbox para centrar el contenido
+    justify-content: center; // Centra horizontalmente
+    align-items: center;   // Centra verticalmente
+    height: 50%;        // Altura igual al viewport
+    width: 100%;         // Ancho igual al viewport
+    justify-content: center;
+  #exlusivo {
+    max-height: 100vh;         // Limita la altura de la imagen
+          width: 100%;
+          object-fit: contain;       // Muestra la imagen completa sin recortar
+          object-position: center;
+  }
+
+}
+
+#foot{
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: rgb(164, 164, 164);
+  .redes{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-right: 10vh;
+    .logo{
+      width: 50vh;
+    }
+    .redeslink{
+      display: flex;
+      justify-content: space-between;
+      a{
+        svg{
+          width: 30px;
+          height: 30px;
+        }
+        img{
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+  .informacion{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-wrap: none;
+  }
+}
+
+  

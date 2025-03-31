@@ -1,0 +1,11 @@
+.card {
+    width: 100%;
+    margin: 20px auto;
+  }
+  
+  /* Si necesitas sobrescribir estilos específicos de DataView o los elementos internos, puedes hacerlo aquí */
+  :host ::ng-deep .p-dataview .p-dataview-item {
+    /* Ejemplo: sin margen extra */
+    margin: 0 !important;
+    padding: 0 !important;
+  }

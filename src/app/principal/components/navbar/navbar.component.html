@@ -1,0 +1,63 @@
+<p-toast [breakpoints]="{ '550px': { width: '100%', right: '0', left: '0' } }" />
+<p-confirmPopup />
+
+<div class="top"></div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a id="logo" class="navbar-brand" href="#" [routerLink]="['/']">
+            <img src="../../../../assets/feltrinelli-logo.svg" alt="Inicio" height="40">
+        </a>
+
+        <!-- Alinear el botón "Crear" y "Cerrar Sesión" a la derecha -->
+        <div id="hola" class="ms-auto d-flex">
+            <a class="nav-link" href="#" [routerLink]="['/quienes']">¿Quienes somos?</a>
+            <a class="nav-link" href="#" [routerLink]="['/catalogo']">Catalogo</a>
+            <a class="nav-link" href="#" [routerLink]="['/login']">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" /><path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" /></svg>
+                Iniciar sesión</a>
+        </div>
+    </div>
+</nav>
+
+<div class="main-content scroll-smooth">
+    <router-outlet></router-outlet>
+</div>
+
+
+  <div id="foot" class=" text-white mt-5">
+    <div class="redes">
+      <div class="logo">
+        <img src="../../../../assets/feltrinelli-logo-blanco.svg" alt="">
+      </div>
+      <div class="redeslink">
+        <a href="https://www.facebook.com/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24">
+            <path d="M22.675 0h-21.35C0.597 0 0 0.597 0 1.325v21.351C0 23.403 0.597 24 1.325 24h11.495v-9.294H9.691V11.08h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464 0.099 2.797 0.143v3.24l-1.918 0.001c-1.504 0-1.795 0.715-1.795 1.763v2.313h3.587l-0.467 3.626h-3.12V24h6.116C23.403 24 24 23.403 24 22.675V1.325C24 0.597 23.403 0 22.675 0z"/>
+          </svg>
+        </a>
+        
+        <a href="https://www.instagram.com/">
+          <img src="../../../../assets/Instagram-logo-white-PNG-large-size.png" alt="">
+        </a>
+        
+        <a href="https://twitter.com/">
+          <svg width="24" height="22" viewBox="0 0 300 271" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+            <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"/>
+          </svg>
+        </a>
+        
+        <a href="https://www.youtube.com/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.121C19.723 3.5 12 3.5 12 3.5s-7.723 0-9.391.565a2.994 2.994 0 0 0-2.107 2.121A31.736 31.736 0 0 0 0 12a31.736 31.736 0 0 0 .502 5.814 2.994 2.994 0 0 0 2.107 2.121C4.277 20.5 12 20.5 12 20.5s7.723 0 9.391-.565a2.994 2.994 0 0 0 2.107-2.121A31.736 31.736 0 0 0 24 12a31.736 31.736 0 0 0-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+        
+      </div>
+    </div>
+    <div class="informacion">
+      Código ético | Condiciones de uso del sitio | Información sobre la resolución alternativa de controversias de consumidores - ADR/ODR | Información sobre la garantía legal de conformidad | Información sobre el RAEE | Información sobre cookies | Gestión de preferencias de cookies | Código de autorregulación de Netcomm | Netcomm Espacio de consumidores | Reglamento DSA
+  
+  LaFeltrinelli Internet Bookshop S.r.l. - Sede legal y administrativa: Via Maurizio Quadrio, 17, 20154 Milán - C.F. y P.I. 05329570963 - Registro de empresas de Milán, Monza Brianza Lodi n.º 05329570963 - R.E.A. MI 1813088 - Capital Social € 10.000,00 i.v. - Con socio único, sujeta a la dirección y coordinación de Feltrinelli S.p.A.
+    </div>
+  </div>
